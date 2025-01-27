@@ -14,9 +14,11 @@ public class Main {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         Assignment8 assignment8 = new Assignment8();
 
-        ExecutorService executor = Executors.newFixedThreadPool(6);
+        ExecutorService executor = Executors.newFixedThreadPool(1000);
         List<List<Integer>> results = Collections.synchronizedList(new ArrayList<>());
         List<CompletableFuture<Void>> tasks = new ArrayList<>();
+
+
 
         for (int i = 0; i < 1000; i++) {
             CompletableFuture<Void> task = CompletableFuture
